@@ -71,8 +71,12 @@ function Index() {
                     </div>
                     <div className="col-6 text-end">
                         <h5 className="fw-bold pb-2">07 days 18h 02m 28s</h5>
-                        <p>Deadline: Sat May 14 2022 02:59:00 GMT-0400</p>
-                        <p>Share</p>
+                        <p><a href="#">Add to Calendar</a></p>
+                        <p>
+                        <span class="badge bg-primary">Light</span>
+                        <span class="badge bg-primary ms-1">Light</span>
+
+                        </p>
                     </div>
                 </div>
             </div>
