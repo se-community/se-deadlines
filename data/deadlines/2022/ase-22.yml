@@ -1,0 +1,14 @@
+- id: ase-22-main-track
+  title: ASE 2022 Main Track
+  year: 2022
+  where: "Ann Arbor, MI, USA"
+  when: "May 1-2, 2022"
+  main_track: true,
+  website: https://conf.researchr.org/home/ase-2022
+  abstract_deadline: "2014-06-01T12:00:00-04:00"
+  full_paper_deadline: "2014-06-01T12:00:00-04:00"
+  timezone: UTC-12
+  tags:
+    - tag 4
+    - tag 5
+    - tab 6

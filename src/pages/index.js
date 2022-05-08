@@ -1,6 +1,19 @@
 import { Container } from "react-bootstrap";
+import dayjs from "dayjs";
+import dayjsUTC from "dayjs/plugin/utc";
+import dayjsTimezone from "dayjs/plugin/timezone";
 
-function Index() {
+import deadlines from "../lib/deadlines";
+import Deadline from "../components/Deadline";
+
+dayjs.extend(dayjsUTC);
+dayjs.extend(dayjsTimezone);
+
+function Index({ deadlines }) {
+
+    const deads = deadlines.map((d, i) => {
+        return <Deadline key={i} {...d} />;
+    });
 
     return (
         <>
@@ -47,56 +60,18 @@ function Index() {
 
             <p>Deadlines</p>
 
-            <div className="card card-body container pb-0 mb-3">
-                <div className="row">
-                    <div className="col-6">
-                        <h5 className="fw-bold pb-2">ICMI 2022</h5>
-                        <p>November 7-11, 2022</p>
-                        <p><a href="http://maps.google.com/?q=Bangalore,%20India">Bangalore, India</a></p>
-                    </div>
-                    <div className="col-6 text-end">
-                        <h5 className="fw-bold pb-2">07 days 18h 02m 28s</h5>
-                        <p>Deadline: Sat May 14 2022 02:59:00 GMT-0400</p>
-                        <p>Share</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="card card-body container pb-0 mb-3">
-                <div className="row">
-                    <div className="col-6">
-                        <h5 className="fw-bold pb-2">ICMI 2022</h5>
-                        <p>November 7-11, 2022</p>
-                        <p>Bangalore, India</p>
-                    </div>
-                    <div className="col-6 text-end">
-                        <h5 className="fw-bold pb-2">07 days 18h 02m 28s</h5>
-                        <p><a href="#">Add to Calendar</a></p>
-                        <p>
-                        <span class="badge bg-primary">Light</span>
-                        <span class="badge bg-primary ms-1">Light</span>
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="card card-body container pb-0 mb-3">
-                <div className="row">
-                    <div className="col-6">
-                        <h5 className="fw-bold pb-2">ICMI 2022</h5>
-                        <p>November 7-11, 2022</p>
-                        <p>Bangalore, India</p>
-                    </div>
-                    <div className="col-6 text-end">
-                        <h5 className="fw-bold pb-2">07 days 18h 02m 28s</h5>
-                        <p>Deadline: Sat May 14 2022 02:59:00 GMT-0400</p>
-                        <p>Share</p>
-                    </div>
-                </div>
-            </div>
+            {deads}
         </>
     );
+}
+
+export async function getStaticProps(context) {
+
+    return {
+        props: {
+            deadlines: await deadlines()
+        },
+    };
 }
 
 export default Index;
