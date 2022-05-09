@@ -1,0 +1,21 @@
+- id: icse-23
+  title: ICSE '23
+  description: 45th International Conference on Software Engineering
+  where: "Melbourne, Australia"
+  when: "May 14-20, 2023"
+  website: https://conf.researchr.org/home/icse-2023
+  tracks:
+
+    - title: Technical Track
+      abstract_deadline: "2022-01-01T23:59:59-12:00"
+      full_paper_deadline: "2022-01-08T23:59:59-12:00"
+      main_track: true
+
+    - title: Journal-First Papers
+      abstract_deadline: "2022-08-08T23:59:59-12:00"
+      full_paper_deadline: "2022-09-08T23:59:59-12:00"
+
+    - title: SEIP - Software Engineering in Practice
+      abstract_deadline: ""
+      full_paper_deadline: "2022-10-08T23:59:59-12:00"
+

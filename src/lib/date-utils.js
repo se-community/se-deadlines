@@ -1,14 +1,21 @@
 import dayjs from "dayjs";
 import dayjsUTC from "dayjs/plugin/utc";
 import dayjsTimezone from "dayjs/plugin/timezone";
+import dayjsIsSameOrAfter from "dayjs/plugin/isSameOrAfter";
 
 dayjs.extend(dayjsUTC);
 dayjs.extend(dayjsTimezone);
+dayjs.extend(dayjsIsSameOrAfter);
 
 class DateUtils {
 
     static parse(dateAsString) {
-        return dayjs(dateAsString);
+
+        if (dateAsString) {
+            return dayjs(dateAsString);
+        }
+
+        return null;
     }
 
     static getTimeZone() {
@@ -17,6 +24,10 @@ class DateUtils {
 
     static getNow() {
         return dayjs.tz(dayjs(), DateUtils.getTimeZone());
+    }
+
+    static isDue(date) {
+        return DateUtils.getNow().isSameOrAfter(date);
     }
 
     static getTimeRemaining(endtime) {
@@ -29,24 +40,20 @@ class DateUtils {
         const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
         const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
+        let str = "Closed";
+
+        if (total > 0) {
+            str = `${days} days ${hours}h ${minutes}m ${("0" + seconds).slice(-2)}s`;
+        }
+
         return {
             total,
             days,
             hours,
             minutes,
-            seconds
+            seconds,
+            str
         };
-    }
-
-    static getTimeRemainingAsString(date) {
-
-        const t = DateUtils.getTimeRemaining(date);
-
-        if (t.total <= 0) {
-            return "0 days 0h 0m 00s";
-        }
-
-        return `${t.days} days ${t.hours}h ${t.minutes}m ${("0" + t.seconds).slice(-2)}s`;
     }
 }
 

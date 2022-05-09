@@ -1,23 +1,19 @@
 import { Container } from "react-bootstrap";
-import dayjs from "dayjs";
-import dayjsUTC from "dayjs/plugin/utc";
-import dayjsTimezone from "dayjs/plugin/timezone";
 
-import deadlines from "../lib/deadlines";
-import Deadline from "../components/Deadline";
+import deadlines from "../lib/file-utils";
+import Conference from "../components/Conference";
 
-dayjs.extend(dayjsUTC);
-dayjs.extend(dayjsTimezone);
+import DateUtils from "../lib/date-utils";
 
 function Index({ deadlines }) {
 
     const deads = deadlines.map((d, i) => {
-        return <Deadline key={i} {...d} />;
+        return <Conference key={i} {...d} />;
     });
 
     return (
         <>
-            <p>Featured</p>
+            <p className="text-light">Featured</p>
 
             <div id="carouselExampleCaptions" class="carousel slide mb-3" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -58,7 +54,10 @@ function Index({ deadlines }) {
                 </button>
             </div>
 
-            <p>Deadlines</p>
+            <li className="d-flex justify-content-between align-items-start text-light">
+                <p className="me-auto">Deadlines</p>
+                <span className="">Your timezone is <span className="text-success">{DateUtils.getTimeZone()}</span></span>
+            </li>
 
             {deads}
         </>

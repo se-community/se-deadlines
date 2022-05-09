@@ -1,0 +1,13 @@
+- id: ase-22
+  title: ASE '22
+  description: IEEE/ACM Automated Software Engineering
+  where: "Ann Arbor, United States"
+  when: "October 10-14, 2022"
+  website: https://conf.researchr.org/home/ase-2022
+  tracks:
+
+    - title: Research Paper
+      abstract_deadline: "2022-04-29T23:59:59-12:00"
+      full_paper_deadline: "2022-05-06T23:59:59-12:00"
+      main_track: true
+

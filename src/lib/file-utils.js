@@ -5,7 +5,7 @@ import recursive from "recursive-readdir";
 
 export default async function getAllDeadlines() {
 
-    const dirPaths = path.join(process.cwd(), "data", "deadlines");
+    const dirPaths = path.join(process.cwd(), "data", "conferences");
 
     return new Promise(resolve => {
 
@@ -17,7 +17,9 @@ export default async function getAllDeadlines() {
 
                 const fileContent = fs.readFileSync(file, "utf8");
 
-                deadlines = [...deadlines, ...yaml.load(fileContent)];
+                const parsedFile = yaml.load(fileContent);
+
+                deadlines = [...deadlines, ...parsedFile];
             });
 
             resolve(deadlines);
