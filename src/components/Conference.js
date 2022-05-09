@@ -41,11 +41,9 @@ function Track({ ...track }) {
 
     return (
         <ListGroupItem className="d-flex justify-content-between align-items-center py-1">
-            <div className="me-auto">
-                <span className={mainTrack}>{track.title}</span>
-            </div>
+            <div className={`me-auto ${mainTrack}`}>{track.title}</div>
             <div className="text-end">
-                <p className="small mb-0 pb-0 text-muted">Full Paper</p>
+                <p className="tiny mb-0 text-muted">Full Paper</p>
                 <span className={`${isClosed}`}>{countDown.str}</span>
             </div>
         </ListGroupItem>
@@ -65,9 +63,9 @@ function Conference({ ...conference }) {
                     <Row>
                         <Col md="4">
                             <h3 className="mb-2 fw-bold">{conference.title}</h3>
-                            <p className="mb-2">{conference.description}</p>
-                            <p className="mb-2 text-muted">{conference.when}</p>
-                            <p className="mb-2"><a href={`http://maps.google.com/?q=${conference.where}`}>{conference.where}</a></p>
+                            <p className="mb-2 small">{conference.description}</p>
+                            <p className="mb-2 small text-muted">{conference.when}</p>
+                            <p className="mb-3 small"><a target="_blank" href={`http://maps.google.com/?q=${conference.where}`}>{conference.where}</a></p>
                         </Col>
                         <Col md="8">
                             <Card>

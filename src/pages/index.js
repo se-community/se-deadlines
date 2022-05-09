@@ -5,9 +5,9 @@ import Conference from "../components/Conference";
 
 import DateUtils from "../lib/date-utils";
 
-function Index({ deadlines }) {
+function Index({ conferences }) {
 
-    const deads = deadlines.map((d, i) => {
+    const conferencesAsHTML = conferences.map((d, i) => {
         return <Conference key={i} {...d} />;
     });
 
@@ -59,17 +59,21 @@ function Index({ deadlines }) {
                 <span className="">Your timezone is <span className="text-success">{DateUtils.getTimeZone()}</span></span>
             </li>
 
-            {deads}
+            {conferencesAsHTML}
         </>
     );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
 
     return {
         props: {
-            deadlines: await deadlines()
+            conferences: await deadlines()
         },
+        // Next.js will attempt to re-generate the page:
+        // - When a request comes in
+        // - At most once every 1 seconds
+        revalidate: 1, // In seconds
     };
 }
 

@@ -10,7 +10,7 @@ function Layout({ children }) {
             <Head>
                 <meta charSet="utf-8" />
 
-                <title>SE-Deadlines</title>
+                <title>SE Conference Deadlines</title>
 
                 <meta name="author" content={Package.author + "oi"} />
                 <meta name="description" content={Package.description} />
@@ -35,19 +35,14 @@ function Layout({ children }) {
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:locale:alternate" content="pt_BR" />
             </Head>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">SE-Deadlines</a>
+                    <span class="navbar-brand color-purple" href="#">SE Conference Deadlines</span>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+
                     </div>
                 </div>
             </nav>
