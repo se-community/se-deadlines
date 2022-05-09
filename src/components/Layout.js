@@ -10,7 +10,7 @@ function Layout({ children }) {
             <Head>
                 <meta charSet="utf-8" />
 
-                <title>SE Conference Deadlines</title>
+                <title>SE Deadlines</title>
 
                 <meta name="author" content={Package.author + "oi"} />
                 <meta name="description" content={Package.description} />
@@ -36,8 +36,8 @@ function Layout({ children }) {
                 <meta property="og:locale:alternate" content="pt_BR" />
             </Head>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <div class="container-fluid">
-                    <span class="navbar-brand color-purple" href="#">SE Conference Deadlines</span>
+                <div class="container">
+                    <span class="navbar-brand color-purple" href="#">SE Deadlines</span>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
