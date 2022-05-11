@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 
-import { Card, Container, Row, Col, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card, Container, Row, Col, ListGroup, ListGroupItem, Accordion } from "react-bootstrap";
 
 import DateUtils from "../lib/date-utils";
 
@@ -85,22 +85,20 @@ function Conference({ ...conference }) {
                     </Row>
                 </Container>
             </Card.Body>
-            <div class="accordion accordion-flush" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed text-light bg-info" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            <Accordion className="accordion-flush">
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header> See Tracks
+                        {/* <button class="accordion-button collapsed text-light bg-info" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                             See Tracks
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse "data-bs-parent="#accordionExample">
-                        <div class="accordion-body py-0 px-0">
-                            <ListGroup className="list-group-flush">
-                                {tracksAsHTML}
-                            </ListGroup>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </button> */}
+                    </Accordion.Header>
+                    <Accordion.Body className="py-0 px-0">
+                        <ListGroup className="list-group-flush">
+                            {tracksAsHTML}
+                        </ListGroup>
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
         </Card>
     );
 }

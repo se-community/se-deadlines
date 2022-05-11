@@ -5,10 +5,6 @@ body {
     color: #48434f;
 }
 
-.bg-info{
-    background-color: #00A9FF !important;
-}
-
 .text-success{
     color: #2ca72c !important;
 }
@@ -17,16 +13,14 @@ body {
     color: #00A9FF !important;
 }
 
-.text-purple{
-    color: #663399 !important;
-}
-
 .accordion-item{
+
     background-color: transparent;
-}
 
-.badge{
-
+    button{
+        color: white !important;
+        background-color: #00A9FF !important;
+    }
 }
 
 .navbar-dark {
