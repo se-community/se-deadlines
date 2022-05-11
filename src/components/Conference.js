@@ -56,27 +56,51 @@ function Conference({ ...conference }) {
         return <Track key={i} {...track} />;
     });
 
+    const tagsAsHTML = conference.tags.map((tag, i) => {
+        return <span class="mb-2 badge border fw-normal text-dark me-2" key={i}>{tag}</span>;
+    });
+
     return (
-        <Card className="mb-4">
-            <Card.Body>
+        <Card className="mb-4 border-0 rounded-bottom">
+            <Card.Body className="pb-1">
                 <Container>
                     <Row>
-                        <Col md="4">
+                        <Col md="8">
                             <h3 className="mb-2 fw-bold">{conference.title}</h3>
                             <p className="mb-2 small">{conference.description}</p>
                             <p className="mb-2 small text-muted">{conference.when}</p>
-                            <p className="mb-3 small"><a target="_blank" href={`http://maps.google.com/?q=${conference.where}`}>{conference.where}</a></p>
+                            <p className="mb-2 small"><a target="_blank" href={`http://maps.google.com/?q=${conference.where}`}>{conference.where}</a></p>
+
+                            {tagsAsHTML}
                         </Col>
-                        <Col md="8">
+                        <Col md="4">
                             <Card>
-                                <ListGroup className="list-group-flush">
-                                    {tracksAsHTML}
-                                </ListGroup>
+                                <Card.Body className="text-center">
+                                    <p className="text-muted small mb-1">Full Paper</p>
+                                    <p className="fw-bold mb-1 text-primary">Research Track</p>
+                                    <h4 className="fw-bold mb-1 ">90 days 12h 30m 15s</h4>
+                                </Card.Body>
                             </Card>
                         </Col>
                     </Row>
                 </Container>
             </Card.Body>
+            <div class="accordion accordion-flush" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed text-light bg-info" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            See Tracks
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse "data-bs-parent="#accordionExample">
+                        <div class="accordion-body py-0 px-0">
+                            <ListGroup className="list-group-flush">
+                                {tracksAsHTML}
+                            </ListGroup>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Card>
     );
 }

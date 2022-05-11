@@ -4,6 +4,9 @@
   where: "Melbourne, Australia"
   when: "May 14-20, 2023"
   website: https://conf.researchr.org/home/icse-2023
+  tags:
+    - Tag 3
+    - Tag 4
   tracks:
 
     - title: Technical Track

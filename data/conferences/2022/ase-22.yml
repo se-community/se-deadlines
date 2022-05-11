@@ -4,6 +4,9 @@
   where: "Ann Arbor, United States"
   when: "October 10-14, 2022"
   website: https://conf.researchr.org/home/ase-2022
+  tags:
+    - Tag 1
+    - Tag 2
   tracks:
 
     - title: Research Paper
