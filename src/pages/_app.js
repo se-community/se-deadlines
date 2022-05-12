@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import "bootstrap/dist/css/bootstrap.css";
 import "../../public/css/style.scss";
 

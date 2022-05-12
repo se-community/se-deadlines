@@ -1,9 +1,12 @@
 
 import { useState, useEffect } from "react";
 
+import Slider from "react-slick";
+
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, Accordion } from "react-bootstrap";
 
 import DateUtils from "../lib/date-utils";
+import CountDown2 from "./CountDown";
 
 function Track({ ...track }) {
 
@@ -60,25 +63,70 @@ function Conference({ ...conference }) {
         return <span class="mb-2 badge border fw-normal text-dark me-2" key={i}>{tag}</span>;
     });
 
+    var settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "50px",
+        slidesToShow: 3,
+        speed: 500
+    };
+
     return (
         <Card className="mb-4 border-0 rounded-bottom">
-            <Card.Body className="pb-1">
+            <Card.Body className="">
                 <Container>
                     <Row>
-                        <Col md="8">
+                        <Col md="4">
                             <h3 className="mb-2 fw-bold">{conference.title}</h3>
                             <p className="mb-2 small">{conference.description}</p>
                             <p className="mb-2 small text-muted">{conference.when}</p>
                             <p className="mb-2 small"><a target="_blank" href={`http://maps.google.com/?q=${conference.where}`}>{conference.where}</a></p>
-
-                            {tagsAsHTML}
+                            <div className="badges">
+                                {tagsAsHTML}
+                            </div>
                         </Col>
-                        <Col md="4">
+                        <Col md="8">
                             <Card>
                                 <Card.Body className="text-center">
-                                    <p className="text-muted small mb-1">Full Paper</p>
-                                    <p className="fw-bold mb-1 text-primary">Research Track</p>
-                                    <h4 className="fw-bold mb-1 ">90 days 12h 30m 15s</h4>
+                                    {/* <p className="text-muted small mb-1">Full Paper</p>
+                                    <p className="fw-bold mb-1 text-primary">{conference.main_track.title}</p>
+                                    <h4 className="fw-bold mb-1 ">
+                                        <CountDown2 datetime={conference.main_track.deadlines.abstract} />
+                                    </h4> */}
+
+                                    <Slider {...settings}>
+                <div >
+                    <div className="card card-body px-5 mx-3">
+                        <h3>1</h3>
+                    </div>
+                </div>
+                <div>
+                    <div className="card card-body px-5 mx-3">
+                        <h3>2</h3>
+                    </div>
+                </div>
+                <div >
+                <div className="card card-body px-5 mx-3">
+                        <h3>3</h3>
+                    </div>
+                </div>
+                <div >
+                <div className="card card-body px-5 mx-3">
+                        <h3>4</h3>
+                    </div>
+                </div>
+                <div >
+                <div className="card card-body px-5 mx-3">
+                        <h3>5</h3>
+                    </div>
+                </div>
+                <div >
+                <div className="card card-body px-5 mx-3">
+                        <h3>6</h3>
+                    </div>
+                </div>
+            </Slider>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -87,11 +135,7 @@ function Conference({ ...conference }) {
             </Card.Body>
             <Accordion className="accordion-flush">
                 <Accordion.Item eventKey="0">
-                    <Accordion.Header> See Tracks
-                        {/* <button class="accordion-button collapsed text-light bg-info" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                            See Tracks
-                        </button> */}
-                    </Accordion.Header>
+                    <Accordion.Header>See Tracks</Accordion.Header>
                     <Accordion.Body className="py-0 px-0">
                         <ListGroup className="list-group-flush">
                             {tracksAsHTML}

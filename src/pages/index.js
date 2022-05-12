@@ -5,7 +5,11 @@ import Conference from "../components/Conference";
 
 import DateUtils from "../lib/date-utils";
 
+
+
 function Index({ conferences }) {
+
+
 
     const conferencesAsHTML = conferences.map((d, i) => {
         return <Conference key={i} {...d} />;
@@ -60,6 +64,10 @@ function Index({ conferences }) {
             </li>
 
             {conferencesAsHTML}
+
+
+
+
         </>
     );
 }

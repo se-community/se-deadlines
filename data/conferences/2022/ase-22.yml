@@ -4,13 +4,17 @@
   where: "Ann Arbor, United States"
   when: "October 10-14, 2022"
   website: https://conf.researchr.org/home/ase-2022
+  main_track:
+    title: Research Paper
+    deadlines:
+      abstract: "2022-10-01T23:59:59-12:00"
+      full_paper: "2022-12-08T23:59:59-12:00"
   tags:
     - Tag 1
     - Tag 2
   tracks:
 
-    - title: Research Paper
-      abstract_deadline: "2022-04-29T23:59:59-12:00"
-      full_paper_deadline: "2022-05-06T23:59:59-12:00"
-      main_track: true
+    - title: Test Paper
+      abstract_deadline: "2022-08-29T23:59:59-12:00"
+      full_paper_deadline: "2022-10-06T23:59:59-12:00"
 

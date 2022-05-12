@@ -5,21 +5,27 @@ body {
     color: #48434f;
 }
 
-.text-success{
+.text-success {
     color: #2ca72c !important;
 }
 
-.text-primary{
+.text-primary {
     color: #00A9FF !important;
 }
 
-.accordion-item{
+.accordion-item {
 
     background-color: transparent;
 
-    button{
+    .accordion-button {
+
         color: white !important;
-        background-color: #00A9FF !important;
+        background-color: transparent;
+        background-image: linear-gradient(90deg, #009ffd, #2a2a72) !important;
+
+        &::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
     }
 }
 
@@ -30,13 +36,13 @@ body {
     border-bottom-style: solid;
     border-bottom-color: #221140;
 
-    .navbar-brand{
+    .navbar-brand {
         font-weight: bold;
         font-size: 1.5rem;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-image: linear-gradient(90deg,#7928CA,#FF0080);
+        background-image: linear-gradient(90deg, #7928CA, #FF0080);
     }
 }
 
@@ -44,10 +50,10 @@ body {
     font-size: 0.675em;
 }
 
-a{
+a {
     text-decoration: none;
 
-    &:hover{
+    &:hover {
         text-decoration: underline;
     }
 }
