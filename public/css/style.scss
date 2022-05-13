@@ -29,6 +29,26 @@ body {
     }
 }
 
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+.slick-list {
+    // background-color: transparent;
+    // background-image: linear-gradient(90deg, #009ffd, #2a2a72) !important;
+
+    // border: 1px solid lightgray;
+
+    // border-image-slice: 1;
+    // border-image-source: linear-gradient(90deg, #009ffd, #2a2a72) !important;
+    border-radius: 0.25rem;
+//     background-origin: border-box;
+//   background-clip: content-box, border-box;
+}
+
+
+
 .navbar-dark {
 
     background-color: #11081f !important;

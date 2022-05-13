@@ -12,11 +12,11 @@ function Layout({ children }) {
 
                 <title>SE Deadlines</title>
 
-                <meta name="author" content={Package.author + "oi"} />
+                <meta name="author" content={Package.author} />
                 <meta name="description" content={Package.description} />
                 <meta name="keywords" content={Package.keywords} />
                 <meta name="robots" content="index, follow" />
-                <meta name="theme-color" content="#021a29" />
+                <meta name="theme-color" content="#11081f" />
 
                 <meta name="mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />

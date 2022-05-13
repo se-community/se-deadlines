@@ -1,15 +1,13 @@
 import { Container } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 import deadlines from "../lib/file-utils";
+// import "../lib/jquery-utils";
 import Conference from "../components/Conference";
 
 import DateUtils from "../lib/date-utils";
 
-
-
 function Index({ conferences }) {
-
-
 
     const conferencesAsHTML = conferences.map((d, i) => {
         return <Conference key={i} {...d} />;
@@ -65,6 +63,11 @@ function Index({ conferences }) {
 
             {conferencesAsHTML}
 
+            <div class="your-class">
+  <div>your content</div>
+  <div>your content</div>
+  <div>your content</div>
+</div>
 
 
 
