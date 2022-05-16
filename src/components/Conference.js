@@ -1,11 +1,14 @@
 
 import { useState, useEffect } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+
 import Slider from "react-slick";
 
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, Accordion } from "react-bootstrap";
 
-import DateUtils from "../lib/date-utils";
+import DateUtils from "../utils/date-utils";
 import CountDown2 from "./CountDown";
 
 function Track({ ...track }) {
@@ -82,7 +85,12 @@ function Conference({ ...conference }) {
                 <Container className="mb-2">
                     <Row>
                         <Col md="4" className="px-0">
-                            <h3 className="mb-2 fw-bold">{conference.title}</h3>
+                            <a href={conference.website} target="_blank">
+                                <h3 className="mb-2 fw-bold ">
+                                    <FontAwesomeIcon icon={faGlobe} className="me-2 text-blue"/>
+                                    <span className="text-dark">{conference.title}</span>
+                                </h3>
+                            </a>
                             <p className="mb-2 small">{conference.description}</p>
                             <p className="mb-2 small text-muted">{conference.when}</p>
                             <p className="mb-2 small"><a target="_blank" href={`http://maps.google.com/?q=${conference.where}`}>{conference.where}</a></p>

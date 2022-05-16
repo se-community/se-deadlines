@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 
-import DateUtils from "../lib/date-utils";
+import DateUtils from "../utils/date-utils";
 
 function CountDown({ datetime }) {
 
