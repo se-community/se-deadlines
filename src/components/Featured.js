@@ -2,6 +2,7 @@ import { Carousel } from "react-bootstrap";
 
 function Featured() {
 
+
     const featured = [{
         img: "https://conf.researchr.org/getImage/icse-2021/orig/logo_oficial_bannerTWITTER-4.png"
     }, {
