@@ -88,7 +88,7 @@ function Conference({ ...conference }) {
                         <Col md="4" className="px-0">
                             <a href={conference.website} target="_blank">
                                 <h3 className="mb-2 fw-bold ">
-                                    <FontAwesomeIcon icon={faGlobe} className="me-2 text-blue"/>
+                                    <FontAwesomeIcon icon={faGlobe} className="me-2 fa-gradient "/>
                                     <span className="text-dark">{conference.title}</span>
                                 </h3>
                             </a>

@@ -13,7 +13,8 @@ function Index({ conferences }) {
 
     return (
         <>
-            <p className="text-light">Featured</p>
+
+            <p className="text-white">Featured</p>
 
             <Featured />
 
